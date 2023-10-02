@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    svg {
+        fill: currentColor;
+        color: gray;
+
+    }
+
+    svg:hover {
+        fill: cadetblue;
+    }
+
+    .top {
+        position: relative;
+        width: 100%;
+        height: 80px;
+        display: flex;
+        align-items: center;
+    }
+
+    .returnBtn {
+        height: 30px;
+        width: 30px;
+        font-size: 25px;
+        text-align: center;
+        background-color: #BDBDBD;
+        color: #FFFFFF;
+        border: none;
+        cursor: pointer;
+    }
+
+    .returnBtn:hover {
+        background-color: #333333;
+    }
+
+    .home {
+        background-image: url("picture/首页.png");
+        height: 30px;
+        width: 30px;
+        background-size: cover;
+        border: none;
+        cursor: pointer;
+    }
+
+    .Box {
+        width: 100%;
+        height: 90%;
+        bottom: 0;
+        padding: 0 10px 10px;
+        border: 1px solid #D5E5F5;
+    }
+
+    .trades {
+        width: 100%;
+        margin: 0 auto;
+        border-collapse: collapse;
+        font-size: 20px;
+        font-family: Verdana, "Microsoft YaHei";
+        color: darkgrey;
+        cursor: pointer;
+    }
+
+    .title span:hover {
+        color: #333333;
+    }
+
+    .trades {
+        background-color: #f7fafa;
+        border-bottom: 1px dotted #84B3FD;
+    }
+
+    .trades tr{
+        border-bottom: #333333 1px solid;
+        border-left: #333333 1px solid;
+        border-right: #333333 1px solid;
+    }
+    .carTrades td {
+        height: 55px;
+        text-align: center;
+    }
+
+    .trades {
+        text-align: center;
+    }
+
+    .head{
+        background-color: #cccccc;
+    }
+    .tradeName {
+        color: #3366D4;
+        font-weight: bold;
+    }
+
+    img {
+        height: 150px;
+        width: 200px;
+    }
+
+    .tradePic1 {
+        background-size: cover;
+        background-image: url("picture/trade2.jpg");
+    }
+
+    .tradePic2 {
+        background-size: cover;
+        background-image: url("picture/trade3.jpg");
+    }
+    .tradePic3 {
+        background-size: cover;
+        background-image: url("picture/trade1.jpg");
+    }
+    .tradePic4 {
+        background-size: cover;
+        background-image: url("picture/trade4.jpg");
+    }
+    .subPrice {
+        color: #FF3334;
+        font-weight: bold;
+    }
+
+    .reduceBtn, .addBtn {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        line-height: 16px;
+        color: #FFF;
+        background-color: #BDBDBD;
+        border: 0;
+        cursor: pointer;
+        border-radius: 2px;
+        font-family: 'Arial';
+        font-size: 13.3333px;
+        text-align: center;
+    }
+
+    .reduceBtn:hover, .addBtn:hover {
+        background-color: #FF9900;
+    }
+
+    .tradeNum {
+        margin: 5px;
+        width: 35px;
+        text-align: center;
+        height: 20px;
+        line-height: 20px;
+        padding: 0 3px;
+        display: inline-block;
+        background: #fff;
+        border: 1px solid #bbb
+    }
+
+    .deleteBtn{
+        color: #3366D4;
+    }
+
+    .deleteBtn:hover, .allCheck:hover {
+        color: #FF3334;
+        cursor: pointer
+    }
+
+    .tradeBottom {
+        position: relative;
+        height: 50px;
+        width: 100%;
+        text-align: right;
+        background-color: blanchedalmond;
+    }
+
+
+    .totalPrice {
+        color: #FF3334;
+        font-weight: bold;
+        font-size: 16px;
+    }
+
+    .bottomBtn {
+        color: #FFF;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        margin: 0 20px;
+        background: #FE8502;
+        border: 1px solid #FF6633;
+        border-radius: 5px 5px 5px 5px;
+        padding: 6px 12px;
+    }
+
+    .bottomBtn:hover {
+        background: #f86703;
+    }
+</style>
+<body>
+<div class="top">
+    <button class="returnBtn" onclick="returnClick()">&lt;</button>
+    <svg t="1694075249328" class="home" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg"
+         p-id="13429" width="200" height="200">
+        <path d="M969.6 502.4l-118.4-112-323.2-300.8c-9.6-9.6-22.4-9.6-32 0l-313.6 297.6c-3.2 3.2-6.4 6.4-9.6 9.6l-118.4 112c-9.6 9.6-9.6 22.4 0 32s22.4 9.6 32 0l83.2-80 0 393.6c0 48 41.6 89.6 92.8 89.6l83.2 0c38.4 0 70.4-28.8 70.4-67.2l0-217.6 99.2 0 99.2 0 0 217.6c0 35.2 32 67.2 70.4 67.2l83.2 0c51.2 0 92.8-38.4 92.8-89.6l0-396.8 80 73.6c9.6 9.6 22.4 9.6 32 0C979.2 524.8 979.2 512 969.6 502.4zM809.6 857.6c0 25.6-19.2 44.8-44.8 44.8l-83.2 0c-12.8 0-22.4-9.6-22.4-22.4L659.2 640c0-12.8-9.6-22.4-22.4-22.4l-121.6 0-121.6 0c-12.8 0-22.4 9.6-22.4 22.4l0 240c0 12.8-9.6 22.4-22.4 22.4l-83.2 0c-25.6 0-44.8-19.2-44.8-44.8l0-438.4 294.4-281.6 294.4 281.6L809.6 857.6z"
+              p-id="13430"></path>
+    </svg>
+    <div class="name">Liling's Shopping Cart</div>
+</div>
+<div class="Box">
+    <table class="trades">
+        <thead>
+        <tr class="head">
+            <th class="title" style="width:60px"><span class="allCheck">全选</span></th>
+            <th class="title" style="width: 100px"><span>商品名</span></th>
+            <th class="title" style="width: 120px"><span>商品预览图</span></th>
+            <th class="title" style="width: 120px"><span>单价</span></th>
+            <th class="title" style="width: 100px"><span>数量</span></th>
+            <th class="title" style="width: 120px"><span>小计</span></th>
+            <th class="title" style="width: 80px"><span>操作</span></th>
+        </tr>
+        </thead>
+        <tbody>
+<!--        <tr class="carTrade1" class="item">-->
+<!--            <td><input class="checkBox" type="checkbox" checked></td>-->
+<!--            <td><span class="tradeName">香水</span></td>-->
+<!--            <td><img class="tradePic1"></td>-->
+<!--            <td><span class="price">189.00元</span></td>-->
+<!--            <td><span class="reduceBtn">-</span><span class="tradeNum">0</span><span class="addBtn">+</span></td>-->
+<!--            <td><span class="subPrice">0</span></td>-->
+<!--            <td><span class="deleteBtn">删除</span></td>-->
+<!--        </tr>-->
+<!--        <tr class="carTrade2" class="item">-->
+<!--            <td><input class="checkBox" type="checkbox" checked></td>-->
+<!--            <td><span class="tradeName">红酒</span></td>-->
+<!--            <td><img class="tradePic2"></td>-->
+<!--            <td><span class="price">380.00元</span></td>-->
+<!--            <td><span class="reduceBtn">-</span><span class="tradeNum">0</span><span class="addBtn">+</span></td>-->
+<!--            <td><span class="subPrice">0</span></td>-->
+<!--            <td><span class="deleteBtn">删除</span></td>-->
+<!--        </tr>-->
+<!--        <tr class="carTrade3" class="item">-->
+<!--            <td><input class="checkBox" type="checkbox" checked></td>-->
+<!--            <td><span class="tradeName">项链</span></td>-->
+<!--            <td><img class="tradePic3"></td>-->
+<!--            <td><span class="price">168.00元</span></td>-->
+<!--            <td><span class="reduceBtn">-</span><span class="tradeNum">0</span><span class="addBtn">+</span></td>-->
+<!--            <td><span class="subPrice">0</span></td>-->
+<!--            <td><span class="deleteBtn">删除</span></td>-->
+<!--        </tr>-->
+<!--        <tr class="carTrade4" class="item">-->
+<!--            <td><input class="checkBox" type="checkbox" checked></td>-->
+<!--            <td><span class="tradeName">香奈儿</span></td>-->
+<!--            <td><img class="tradePic4"></td>-->
+<!--            <td><span class="price">890.00元</span></td>-->
+<!--            <td><span class="reduceBtn">-</span><span class="tradeNum">0</span><span class="addBtn">+</span></td>-->
+<!--            <td><span class="subPrice">0</span></td>-->
+<!--            <td><span class="deleteBtn">删除</span></td>-->
+<!--        </tr>-->
+        </tbody>
+        <tfoot>
+        <tr class="tradeBottom">
+            <td colspan="9">
+                <span class="bottomSpan">已选择 <span class="totalNum">0</span> 件商品</span>
+                <span class="bottomSpan">总计：<span class="totalPrice">0</span>元</span>
+                <span class="bottomBtn">提交订单</span>
+            </td>
+        </tr>
+        </tfoot>
+    </table>
+</div>
+</body>
+<script src="shop.js">
+</script>
+</html>
